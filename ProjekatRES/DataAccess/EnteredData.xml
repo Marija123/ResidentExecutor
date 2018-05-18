@@ -1,1 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
+<?xml version="1.0"?>
+<ArrayOfPodatak xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Podatak>
+    <vrednost>76</vrednost>
+    <datum>90</datum>
+  </Podatak>
+  <Podatak>
+    <vrednost>56</vrednost>
+    <datum>90</datum>
+  </Podatak>
+  <Podatak>
+    <vrednost>56</vrednost>
+    <datum>78888</datum>
+  </Podatak>
+</ArrayOfPodatak>

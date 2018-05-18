@@ -3,3 +3,9 @@ C:\Users\Marija\Desktop\RES\Projekat_BW&P\ResidentExecutor\ProjekatRES\DataAcces
 C:\Users\Marija\Desktop\RES\Projekat_BW&P\ResidentExecutor\ProjekatRES\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\Marija\Desktop\RES\Projekat_BW&P\ResidentExecutor\ProjekatRES\DataAccess\obj\Debug\DataAccess.dll
 C:\Users\Marija\Desktop\RES\Projekat_BW&P\ResidentExecutor\ProjekatRES\DataAccess\obj\Debug\DataAccess.pdb
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\DataAccess\obj\Debug\DataAccess.pdb
