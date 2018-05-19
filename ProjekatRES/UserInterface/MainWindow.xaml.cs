@@ -40,7 +40,8 @@ namespace UserInterface
         {
             if(validate())
             {
-                
+                datumVreme = dan.SelectedValue.ToString() + "." + mesec.SelectedValue.ToString() + "." + godina.Text.ToString();
+                datumVreme = datumVreme + " " + sat.SelectedValue.ToString() + ":" + minut.SelectedValue.ToString();
                 m.UcitajUBazu1(v, datumVreme, podrucjeBoxS.SelectedValue.ToString());
             }
            
@@ -55,7 +56,7 @@ namespace UserInterface
             {
                 retVal = false;
                 vrednostGreska.Content = "Polje ne sme biti prazno!";
-                vrednosText.BorderBrush = Brushes.Red;
+                //vrednosText.BorderBrush = Brushes.Red;
             }
             else if (Double.TryParse(vrednosText.Text, out v))
             {
@@ -63,12 +64,12 @@ namespace UserInterface
                 {
                     retVal = false;
                     vrednostGreska.Content = "Vrednost ne moze biti negativna!";
-                    vrednosText.BorderBrush = Brushes.Red;
+                  //  vrednosText.BorderBrush = Brushes.Red;
                 }
                 else
                 {
                     vrednostGreska.Content = "";
-                    vrednosText.BorderBrush = Brushes.Gray;
+                    //vrednosText.BorderBrush = Brushes.Gray;
                 }
                
 
@@ -76,22 +77,185 @@ namespace UserInterface
             else
             {
                 retVal = false;
-                vrednostGreska.Content = "Vrednost moze biti samo broj!";
-                vrednosText.BorderBrush = Brushes.Red;
+                vrednostGreska.Content = "Vrednost mora biti broj!";
+               // vrednosText.BorderBrush = Brushes.Red;
             }
 
             if(podrucjeBoxS.SelectedItem == null)
             {
                 retVal = false;
                 podrucjeGreska.Content = "Morate da odaberete podrucje!";
-                podrucjeBoxS.BorderBrush = Brushes.Red;
-                podrucjeBoxS.BorderThickness = new Thickness(3);
+               // podrucjeBoxS.BorderThickness = new Thickness(3);
+               // podrucjeBoxS.BorderBrush = Brushes.Red;
+               
             }
             else
             {
                 
                 podrucjeGreska.Content = "";
-                podrucjeBoxS.BorderBrush = Brushes.Gray;
+               // podrucjeBoxS.BorderBrush = Brushes.Gray;
+            }
+
+            if (dan.SelectedItem == null || mesec.SelectedItem == null || godina.Text.Trim().Equals(""))
+            {
+
+                retVal = false;
+                datumGreska.Content = "Polja ne smeju biti prazna!";
+               // dan.BorderBrush = Brushes.Red;
+               // dan.BorderThickness = new Thickness(3);
+               // mesec.BorderBrush = Brushes.Red;
+               //mesec.BorderThickness = new Thickness(3);
+               // godina.BorderBrush = Brushes.Red;
+
+            }
+            else
+            {
+                int br;
+                if(Int32.TryParse(godina.Text, out br))
+                {
+                    if (br < 1900 || br>2018)
+                    {
+                        retVal = false;
+                        datumGreska.Content = "Godina mora da bude izmedju 1900 i 2018!";
+                       // godina.BorderBrush = Brushes.Red;
+                    }
+                    else
+                    {
+
+                        if (mesec.SelectedValue.Equals(4) || mesec.SelectedValue.Equals(6) || mesec.SelectedValue.Equals(9) || mesec.SelectedValue.Equals(11))
+                        {
+                            if (dan.SelectedValue.Equals(31))
+                            {
+                                retVal = false;
+                                datumGreska.Content = "Selektovani mesec nema 31 dan!";
+                                //dan.BorderThickness = new Thickness(3);
+                                //dan.BorderBrush = Brushes.Red;
+                            }
+                            else
+                            {
+                                datumGreska.Content = "";
+                                //dan.BorderBrush = Brushes.Gray;
+
+                                //mesec.BorderBrush = Brushes.Gray;
+
+                                //godina.BorderBrush = Brushes.Gray;
+                            }
+                        }
+                        else if(mesec.SelectedValue.Equals(2))
+                        {
+                            if((br % 4 == 0) && ((br%100 != 0) || (br % 400 == 0)))
+                            {
+                                if(dan.SelectedValue.Equals(30) || dan.SelectedValue.Equals(31))
+                                {
+                                    retVal = false;
+                                    datumGreska.Content = "Selektovani mesec ima samo 29 dana!";
+                                    //dan.BorderThickness = new Thickness(3);
+                                    //dan.BorderBrush = Brushes.Red;
+                                }
+                                else
+                                {
+                                    datumGreska.Content = "";
+                                    //dan.BorderBrush = Brushes.Gray;
+
+                                    //mesec.BorderBrush = Brushes.Gray;
+
+                                    //godina.BorderBrush = Brushes.Gray;
+                                }
+                            }
+                            else
+                            {
+                                if (dan.SelectedValue.Equals(29) ||dan.SelectedValue.Equals(30) || dan.SelectedValue.Equals(31) )
+                                {
+                                    retVal = false;
+                                    datumGreska.Content = "Selektovani mesec ima samo 28 dana!";
+                                    //dan.BorderThickness = new Thickness(3);
+                                    //dan.BorderBrush = Brushes.Red;
+                                }
+                                else
+                                {
+                                    datumGreska.Content = "";
+                                    //dan.BorderBrush = Brushes.Gray;
+
+                                    //mesec.BorderBrush = Brushes.Gray;
+
+                                    //godina.BorderBrush = Brushes.Gray;
+                                }
+                            }
+                            
+                        }
+                    }
+                
+                }
+                else
+                {
+                    retVal = false;
+                    datumGreska.Content = "Godina mora biti broj!";
+                   // godina.BorderBrush = Brushes.Red;
+                }
+            }
+
+            if(sat.SelectedItem == null || minut.SelectedItem == null)
+            {
+                retVal = false;
+                vremeGreska.Content = "Polja ne smeju biti prazna!";
+               // sat.BorderBrush = Brushes.Red;
+               // sat.BorderThickness = new Thickness(3);
+               //minut.BorderBrush = Brushes.Red;
+               //minut.BorderThickness = new Thickness(3);
+               
+            }
+            else
+            {
+                if (sat.SelectedValue.Equals(25))
+                {
+                    if(!mesec.SelectedValue.Equals(3) || !dan.SelectedValue.Equals(26))
+                    {
+                        retVal = false;
+                        vremeGreska.Content = "Vreme za navedeni datum ne postoji!";
+                        //sat.BorderBrush = Brushes.Red;
+                        //sat.BorderThickness = new Thickness(3);
+                        //minut.BorderBrush = Brushes.Red;
+                        //minut.BorderThickness = new Thickness(3);
+                    }
+                    else if(mesec.SelectedValue.Equals(10) && dan.SelectedValue.Equals(29))
+                    {
+                        retVal = false;
+                        vremeGreska.Content = "Vreme za navedeni datum ne postoji!";
+                    }
+                    else
+                    {
+                        vremeGreska.Content = "";
+                        //sat.BorderBrush = Brushes.Gray; 
+                        //minut.BorderBrush = Brushes.Gray;
+                       
+                    }
+                }
+                else if (sat.SelectedValue.Equals(24))
+                {
+                    if (mesec.SelectedValue.Equals(10) && dan.SelectedValue.Equals(29))
+                    {
+                        retVal = false;
+                        vremeGreska.Content = "Vreme za navedeni datum ne postoji!";
+                        //sat.BorderBrush = Brushes.Red;
+                        //sat.BorderThickness = new Thickness(3);
+                        //minut.BorderBrush = Brushes.Red;
+                        //minut.BorderThickness = new Thickness(3);
+                    }
+                    else
+                    {
+                        vremeGreska.Content = "";
+                        //sat.BorderBrush = Brushes.Gray;
+                        //minut.BorderBrush = Brushes.Gray;
+
+                    }
+                }
+                else
+                {
+                    vremeGreska.Content = "";
+                }
+
+
+
             }
 
 
@@ -99,14 +263,6 @@ namespace UserInterface
             return retVal;
         }
 
-        public bool proveriVrednost()
-        {
-            bool retVal = false;
-           
-
-            return retVal;
-           
-        }
 
 
     }
