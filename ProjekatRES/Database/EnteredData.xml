@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<ArrayOfPodatak xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Podatak>
-    <vrednost>3456</vrednost>
-    <datum>26.4.2015 20:10</datum>
-    <sifraPod>MNE</sifraPod>
-  </Podatak>
-</ArrayOfPodatak>

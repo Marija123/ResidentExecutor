@@ -10,6 +10,12 @@ namespace ResidentExecutor
     {
         static void Main(string[] args)
         {
+            IFunkcije funkcija;
+
+            funkcija = new ProsecnaPotrosnja();
+
+            funkcija.IzvrsiFunkciju();
+            Console.ReadLine();
         }
     }
 }

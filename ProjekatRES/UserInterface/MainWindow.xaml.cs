@@ -40,7 +40,30 @@ namespace UserInterface
         {
             if(validate())
             {
-                datumVreme = dan.SelectedValue.ToString() + "." + mesec.SelectedValue.ToString() + "." + godina.Text.ToString();
+
+                int dan1 = int.Parse(dan.SelectedValue.ToString());
+                if(dan1<10)
+                {
+                    datumVreme = "0" + dan.SelectedValue.ToString();
+                }
+                else
+                {
+                    datumVreme = dan.SelectedValue.ToString();
+                }
+
+                datumVreme = datumVreme + ".";
+
+                int mesec1 = int.Parse(mesec.SelectedValue.ToString());
+                if (mesec1 < 10)
+                {
+                    datumVreme = datumVreme + "0" + mesec.SelectedValue.ToString();
+                }
+                else
+                {
+                    datumVreme = datumVreme + mesec.SelectedValue.ToString();
+                }
+
+                datumVreme = datumVreme + "." + godina.Text.ToString();
                 datumVreme = datumVreme + " " + sat.SelectedValue.ToString() + ":" + minut.SelectedValue.ToString();
                 m.UcitajUBazu1(v, datumVreme, podrucjeBoxS.SelectedValue.ToString());
             }

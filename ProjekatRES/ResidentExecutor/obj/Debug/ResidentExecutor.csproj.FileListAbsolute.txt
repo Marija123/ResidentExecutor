@@ -1,0 +1,9 @@
+C:\Users\Marija\Desktop\RES\Projekat_BW&P\ResidentExecutor\ProjekatRES\ResidentExecutor\bin\Debug\ResidentExecutor.exe.config
+C:\Users\Marija\Desktop\RES\Projekat_BW&P\ResidentExecutor\ProjekatRES\ResidentExecutor\bin\Debug\ResidentExecutor.exe
+C:\Users\Marija\Desktop\RES\Projekat_BW&P\ResidentExecutor\ProjekatRES\ResidentExecutor\bin\Debug\ResidentExecutor.pdb
+C:\Users\Marija\Desktop\RES\Projekat_BW&P\ResidentExecutor\ProjekatRES\ResidentExecutor\bin\Debug\DataAccess.dll
+C:\Users\Marija\Desktop\RES\Projekat_BW&P\ResidentExecutor\ProjekatRES\ResidentExecutor\bin\Debug\DataAccess.pdb
+C:\Users\Marija\Desktop\RES\Projekat_BW&P\ResidentExecutor\ProjekatRES\ResidentExecutor\obj\Debug\ResidentExecutor.csproj.CoreCompileInputs.cache
+C:\Users\Marija\Desktop\RES\Projekat_BW&P\ResidentExecutor\ProjekatRES\ResidentExecutor\obj\Debug\ResidentExecutor.exe
+C:\Users\Marija\Desktop\RES\Projekat_BW&P\ResidentExecutor\ProjekatRES\ResidentExecutor\obj\Debug\ResidentExecutor.pdb
+C:\Users\Marija\Desktop\RES\Projekat_BW&P\ResidentExecutor\ProjekatRES\ResidentExecutor\obj\Debug\ResidentExecutor.csprojResolveAssemblyReference.cache
