@@ -12,4 +12,14 @@
     <vrednost>56</vrednost>
     <datum>78888</datum>
   </Podatak>
+  <Podatak>
+    <vrednost>250</vrednost>
+    <datum />
+    <sifraPod />
+  </Podatak>
+  <Podatak>
+    <vrednost>250</vrednost>
+    <datum />
+    <sifraPod />
+  </Podatak>
 </ArrayOfPodatak>

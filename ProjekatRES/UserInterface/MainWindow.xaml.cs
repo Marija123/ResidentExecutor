@@ -25,12 +25,89 @@ namespace UserInterface
         public MainWindow()
         {
             InitializeComponent();
+            dan.ItemsSource = Liste.dani;
+            mesec.ItemsSource = Liste.meseci;
+            sat.ItemsSource = Liste.sati;
+            minut.ItemsSource = Liste.minuti;
+            podrucjeBoxS.ItemsSource = Liste.podrucja;
         }
+
+        public static double v = 0;
+        public static string datumVreme = "";
+       
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            double v = double.Parse(vrednosText.Text);
-            m.UcitajUBazu1(v,datumText.Text);
+            if(validate())
+            {
+                
+                m.UcitajUBazu1(v, datumVreme, podrucjeBoxS.SelectedValue.ToString());
+            }
+           
+            
         }
+
+        private bool validate()
+        {
+            bool retVal = true;
+
+            if(vrednosText.Text.Trim().Equals(""))
+            {
+                retVal = false;
+                vrednostGreska.Content = "Polje ne sme biti prazno!";
+                vrednosText.BorderBrush = Brushes.Red;
+            }
+            else if (Double.TryParse(vrednosText.Text, out v))
+            {
+                if (v < 0)
+                {
+                    retVal = false;
+                    vrednostGreska.Content = "Vrednost ne moze biti negativna!";
+                    vrednosText.BorderBrush = Brushes.Red;
+                }
+                else
+                {
+                    vrednostGreska.Content = "";
+                    vrednosText.BorderBrush = Brushes.Gray;
+                }
+               
+
+            }
+            else
+            {
+                retVal = false;
+                vrednostGreska.Content = "Vrednost moze biti samo broj!";
+                vrednosText.BorderBrush = Brushes.Red;
+            }
+
+            if(podrucjeBoxS.SelectedItem == null)
+            {
+                retVal = false;
+                podrucjeGreska.Content = "Morate da odaberete podrucje!";
+                podrucjeBoxS.BorderBrush = Brushes.Red;
+                podrucjeBoxS.BorderThickness = new Thickness(3);
+            }
+            else
+            {
+                
+                podrucjeGreska.Content = "";
+                podrucjeBoxS.BorderBrush = Brushes.Gray;
+            }
+
+
+
+            return retVal;
+        }
+
+        public bool proveriVrednost()
+        {
+            bool retVal = false;
+           
+
+            return retVal;
+           
+        }
+
+
     }
 }

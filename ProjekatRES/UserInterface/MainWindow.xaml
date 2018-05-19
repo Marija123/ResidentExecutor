@@ -5,12 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UserInterface"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid Background="AliceBlue">
-        <Button Name="dugmeUnesi" Content="Unesi" Margin="184,190,203.4,92.8" Click="Button_Click"></Button>
-        <Label Content="Unesite vrednost:" Margin="48,78,339.4,205.8"></Label>
-        <Label Content="Unesite datum:" Margin="48,120,339.4,163.8"></Label>
-        <TextBox Name="vrednosText" Margin="184,68,84.4,222.8"></TextBox>
-        <TextBox Name="datumText" Margin="184,120,84.4,170.8"></TextBox>
+        Title="MainWindow" Height="351.559" Width="525">
+    <Grid Background="#900c3f">
+        <Button Name="dugmeUnesi" Content="Unesi" Margin="199,269,171.4,14.6" Click="Button_Click" Background="Orange" Foreground="#900c3f" FontSize="20"></Button>
+        <Label Content="Unesite vrednost:" Margin="10,22,340.4,253.6" Foreground="Orange" FontSize="20"></Label>
+        <Label Content="Unesite datum:" Margin="10,73,348.4,199.6" Foreground="Orange" FontSize="20" RenderTransformOrigin="0.526,0.496"></Label>
+        <Label Content="Unesite vreme:" Margin="10,142,364.4,137.6" Foreground="Orange" FontSize="20"></Label>
+        <Label Content="mW/h" Foreground="Orange" FontSize="18" Margin="438,14,10.4,268.6"></Label>
+        <Label Content=":" Foreground="Orange" FontSize="20" Margin="252,142,252.4,142.6" RenderTransformOrigin="-6.932,2.375"></Label>
+        <Label Content="Odaberite područje:" Foreground="Orange" FontSize="20" Margin="10,209,319.4,72.6"></Label>
+        <Label Name ="podrucjeGreska" Content="" Foreground="Red" FontSize="15" Margin="199,240,80.4,52.6"></Label>
+        <Label Name ="vremeGreska" Content="" Foreground="Red" FontSize="15" Margin="199,178,80.4,114.6"></Label>
+        <Label Name ="datumGreska" Content="" Foreground="Red" FontSize="15" Margin="199,113,80.4,179.6"></Label>
+        <Label Name ="vrednostGreska" Content="" Foreground="Red" FontSize="15" Margin="199,53,80.4,239.6"></Label>
+        <TextBox Name="vrednosText" Margin="199,22,80.4,268.6"></TextBox>
+        <ComboBox Name="dan" Margin="199,82,266.4,208.6"></ComboBox>
+        <ComboBox Name="mesec" Margin="259,82,206.4,208.6" RenderTransformOrigin="0.2,2.185"></ComboBox>
+        <TextBox Name="godina" Margin="317,82,80.4,208.6"></TextBox>
+        <ComboBox Name="sat" Margin="266,142,199.4,148.6"></ComboBox>
+        <ComboBox Name="minut" Margin="199,142,266.4,148.6"></ComboBox>
+        <ComboBox Name="podrucjeBoxS" Margin="199,209,80.4,81.6"></ComboBox>
     </Grid>
 </Window>

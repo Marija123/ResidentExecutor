@@ -43,6 +43,7 @@
     <Compile Include="DataIO.cs" />
     <Compile Include="Metode.cs" />
     <Compile Include="Podatak.cs" />
+    <Compile Include="Podrucje.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

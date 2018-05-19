@@ -11,11 +11,14 @@ namespace DataAccess
         public double vrednost { get; set; }
         public string datum { get; set; }
 
+        public string sifraPod { get; set; }
+
         public Podatak() { }
-        public Podatak(double v, string d)
+        public Podatak(double v, string d, string s)
         {
             vrednost = v;
             datum = d;
+            sifraPod = s;
         }
     }
 }

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<ArrayOfPodrucje xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Podrucje>
+	<Ime>Albanija</Ime>
+	<Sifra>ALB</Sifra>
+  </Podrucje>
+  <Podrucje>
+	<Ime>Bosna i Hercegovina</Ime>
+	<Sifra>BIH</Sifra>
+  </Podrucje>
+  <Podrucje>
+	<Ime>Bugarska</Ime>
+	<Sifra>BGR</Sifra>
+  </Podrucje>
+  <Podrucje>
+	<Ime>Crna Gora</Ime>
+	<Sifra>MNE</Sifra>
+  </Podrucje>
+  <Podrucje>
+	<Ime>Grčka</Ime>
+	<Sifra>GRC</Sifra>
+  </Podrucje>
+  <Podrucje>
+	<Ime>Hrvatska</Ime>
+	<Sifra>HR</Sifra>
+  </Podrucje>
+  <Podrucje>
+	<Ime>Makedonija</Ime>
+	<Sifra>MKD</Sifra>
+  </Podrucje>
+  <Podrucje>
+	<Ime>Rumunija</Ime>
+	<Sifra>ROU</Sifra>
+  </Podrucje>
+  <Podrucje>
+	<Ime>Slovenija</Ime>
+	<Sifra>SVN</Sifra>
+  </Podrucje>
+  <Podrucje>
+	<Ime>Srbija</Ime>
+	<Sifra>SRB</Sifra>
+  </Podrucje>
+</ArrayOfPodrucje>
