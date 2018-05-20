@@ -20,7 +20,7 @@ namespace ResidentExecutor
         {
             List<Podrucje> lista = m.IzlistajPodrucja();
             List<Podatak> listaPodataka = m.IscitajIzBaze();
-            double[] listaSuma = new double[10];
+            List<double> listaSuma = new List<double>();
             Dictionary<string, string> listaPoslednjihVremena = new Dictionary<string, string>();
             Dictionary<string, string> dic = m.IzlistajPoslednjeProsecne();
 
@@ -41,7 +41,9 @@ namespace ResidentExecutor
                             string[] pom = pod.datum.Split(' ');
                             s.Add(pom[1]);
                             count[i]++;
-                            listaSuma[i] += pod.vrednost;
+                            double a = listaSuma.ElementAt(i) + pod.vrednost;
+                            listaSuma[i] = a;
+                            //listaSuma.Insert(i, a);
                         }
                     }
 
@@ -51,8 +53,11 @@ namespace ResidentExecutor
 
                 for (int i = 0; i < listaSuma.Count(); i++)
                 {
-                    listaRez.Add(listaSuma[i] / count[i]);
+                    listaRez.Add(listaSuma.ElementAt(i) / count[i]);
                 }
+
+
+                m.UcitajUBazu(listaRez, listaPoslednjihVremena, DateTime.Now, 1);
             }
             else
             {
@@ -61,6 +66,7 @@ namespace ResidentExecutor
                 {
                     //count[i] = 0;
                     List<string> s = new List<string>();
+                   // listaSuma.Add(0);
                     foreach (Podatak pod in listaPodataka)
                     {
 
@@ -91,12 +97,14 @@ namespace ResidentExecutor
                     }
                 }
 
-
-
+                Dictionary<string, string> li = new Dictionary<string, string>();
+                
                 for (int i = 0; i < listaDrz.Count; i++)
                 {
                     count[i] = 0;
-
+                    List<string> s = new List<string>();
+                    listaSuma.Add(0);
+                    int index = i;
                     foreach (Podatak pod in listaPodataka)
                     {
 
@@ -104,21 +112,31 @@ namespace ResidentExecutor
                         {
 
                             count[i]++;
-                            listaSuma[i] += pod.vrednost;
+                            
+                            double a = listaSuma.ElementAt(index) + pod.vrednost;
+                            listaSuma[index] = a;
+                            //listaSuma.Insert(index, a);
+                            // listaSuma += pod.vrednost;
+                            string[] pom = pod.datum.Split(' ');
+                            s.Add(pom[1]);
+                           
                         }
-                    }
 
+                    }
+                    li.Add(listaDrz[index], s.Last());
                     // listaPoslednjihVremena.Add(lista[i].Sifra, s.Last());
 
                 }
 
                 for (int i = 0; i < listaSuma.Count(); i++)
                 {
-                    listaRez.Add(listaSuma[i] / count[i]);
+                    listaRez.Add(listaSuma.ElementAt(i) / count[i]);
                 }
-
+                // listaPoslednjihVremena = li;
+                m.UcitajUBazu(listaRez, li, DateTime.Now, 1);
             }
-            m.UcitajUBazu(listaRez, listaPoslednjihVremena, DateTime.Now, 1);
+            
+           
         }
 
         

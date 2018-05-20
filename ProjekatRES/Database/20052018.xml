@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<ArrayOfPodatak xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Podatak>
+    <vrednost>20</vrednost>
+    <datum>20.05.2018 8:3</datum>
+    <sifraPod>ALB</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>20</vrednost>
+    <datum>20.05.2018 8:3</datum>
+    <sifraPod>BIH</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>20</vrednost>
+    <datum>20.05.2018 8:3</datum>
+    <sifraPod>BGR</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>20</vrednost>
+    <datum>20.05.2018 8:3</datum>
+    <sifraPod>MNE</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>20</vrednost>
+    <datum>20.05.2018 8:3</datum>
+    <sifraPod>GRC</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>20</vrednost>
+    <datum>20.05.2018 8:3</datum>
+    <sifraPod>HR</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>20</vrednost>
+    <datum>20.05.2018 8:3</datum>
+    <sifraPod>MKD</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>20</vrednost>
+    <datum>20.05.2018 8:3</datum>
+    <sifraPod>ROU</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>20</vrednost>
+    <datum>20.05.2018 8:3</datum>
+    <sifraPod>SVN</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>20</vrednost>
+    <datum>20.05.2018 8:3</datum>
+    <sifraPod>SRB</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>209</vrednost>
+    <datum>20.05.2018 17:3</datum>
+    <sifraPod>SRB</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>200</vrednost>
+    <datum>20.05.2018 15:3</datum>
+    <sifraPod>SRB</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>11</vrednost>
+    <datum>20.05.2018 4:10</datum>
+    <sifraPod>SRB</sifraPod>
+  </Podatak>
+</ArrayOfPodatak>

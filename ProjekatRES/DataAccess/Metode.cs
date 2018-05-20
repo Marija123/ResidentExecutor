@@ -190,8 +190,14 @@ namespace DataAccess
                     {
                             if (p.sifraPodrucja.Equals(podrucja[i].Sifra))
                             {
+                            if (listaVremena.ContainsKey(p.sifraPodrucja))
+                            {
+                                listaVremena[p.sifraPodrucja] = p.VremePoslednjegUnosa;
+                            }
+                            else
+                            {
                                 listaVremena.Add(p.sifraPodrucja, p.VremePoslednjegUnosa);
-
+                            }
                             }
                     }
 

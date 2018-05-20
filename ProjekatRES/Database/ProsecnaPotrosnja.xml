@@ -1,123 +1,75 @@
 <?xml version="1.0"?>
 <ArrayOfPodatakZaProracu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <PodatakZaProracu>
-    <ProracunataVrednost>36</ProracunataVrednost>
-    <VremePoslednjegUnosa>6:8</VremePoslednjegUnosa>
-    <VremeProracuna>05-19-2018  20:21</VremeProracuna>
+    <ProracunataVrednost>20</ProracunataVrednost>
+    <VremePoslednjegUnosa>8:3</VremePoslednjegUnosa>
+    <VremeProracuna>05/20/2018  13:06</VremeProracuna>
     <sifraPodrucja>ALB</sifraPodrucja>
   </PodatakZaProracu>
   <PodatakZaProracu>
-    <ProracunataVrednost>36</ProracunataVrednost>
-    <VremePoslednjegUnosa>6:8</VremePoslednjegUnosa>
-    <VremeProracuna>05-19-2018  20:21</VremeProracuna>
+    <ProracunataVrednost>20</ProracunataVrednost>
+    <VremePoslednjegUnosa>8:3</VremePoslednjegUnosa>
+    <VremeProracuna>05/20/2018  13:06</VremeProracuna>
     <sifraPodrucja>BIH</sifraPodrucja>
   </PodatakZaProracu>
   <PodatakZaProracu>
-    <ProracunataVrednost>36</ProracunataVrednost>
-    <VremePoslednjegUnosa>6:8</VremePoslednjegUnosa>
-    <VremeProracuna>05-19-2018  20:21</VremeProracuna>
+    <ProracunataVrednost>20</ProracunataVrednost>
+    <VremePoslednjegUnosa>8:3</VremePoslednjegUnosa>
+    <VremeProracuna>05/20/2018  13:06</VremeProracuna>
     <sifraPodrucja>BGR</sifraPodrucja>
   </PodatakZaProracu>
   <PodatakZaProracu>
-    <ProracunataVrednost>4</ProracunataVrednost>
-    <VremePoslednjegUnosa>10:48</VremePoslednjegUnosa>
-    <VremeProracuna>05-19-2018  20:21</VremeProracuna>
+    <ProracunataVrednost>20</ProracunataVrednost>
+    <VremePoslednjegUnosa>8:3</VremePoslednjegUnosa>
+    <VremeProracuna>05/20/2018  13:06</VremeProracuna>
     <sifraPodrucja>MNE</sifraPodrucja>
   </PodatakZaProracu>
   <PodatakZaProracu>
-    <ProracunataVrednost>36</ProracunataVrednost>
-    <VremePoslednjegUnosa>6:8</VremePoslednjegUnosa>
-    <VremeProracuna>05-19-2018  20:21</VremeProracuna>
+    <ProracunataVrednost>20</ProracunataVrednost>
+    <VremePoslednjegUnosa>8:3</VremePoslednjegUnosa>
+    <VremeProracuna>05/20/2018  13:06</VremeProracuna>
     <sifraPodrucja>GRC</sifraPodrucja>
   </PodatakZaProracu>
   <PodatakZaProracu>
-    <ProracunataVrednost>36</ProracunataVrednost>
-    <VremePoslednjegUnosa>6:8</VremePoslednjegUnosa>
-    <VremeProracuna>05-19-2018  20:21</VremeProracuna>
+    <ProracunataVrednost>20</ProracunataVrednost>
+    <VremePoslednjegUnosa>8:3</VremePoslednjegUnosa>
+    <VremeProracuna>05/20/2018  13:06</VremeProracuna>
     <sifraPodrucja>HR</sifraPodrucja>
   </PodatakZaProracu>
   <PodatakZaProracu>
-    <ProracunataVrednost>36</ProracunataVrednost>
-    <VremePoslednjegUnosa>6:8</VremePoslednjegUnosa>
-    <VremeProracuna>05-19-2018  20:21</VremeProracuna>
+    <ProracunataVrednost>20</ProracunataVrednost>
+    <VremePoslednjegUnosa>8:3</VremePoslednjegUnosa>
+    <VremeProracuna>05/20/2018  13:06</VremeProracuna>
     <sifraPodrucja>MKD</sifraPodrucja>
   </PodatakZaProracu>
   <PodatakZaProracu>
-    <ProracunataVrednost>36</ProracunataVrednost>
-    <VremePoslednjegUnosa>6:8</VremePoslednjegUnosa>
-    <VremeProracuna>05-19-2018  20:21</VremeProracuna>
+    <ProracunataVrednost>20</ProracunataVrednost>
+    <VremePoslednjegUnosa>8:3</VremePoslednjegUnosa>
+    <VremeProracuna>05/20/2018  13:06</VremeProracuna>
     <sifraPodrucja>ROU</sifraPodrucja>
   </PodatakZaProracu>
   <PodatakZaProracu>
-    <ProracunataVrednost>36</ProracunataVrednost>
-    <VremePoslednjegUnosa>6:8</VremePoslednjegUnosa>
-    <VremeProracuna>05-19-2018  20:21</VremeProracuna>
+    <ProracunataVrednost>20</ProracunataVrednost>
+    <VremePoslednjegUnosa>8:3</VremePoslednjegUnosa>
+    <VremeProracuna>05/20/2018  13:06</VremeProracuna>
     <sifraPodrucja>SVN</sifraPodrucja>
   </PodatakZaProracu>
   <PodatakZaProracu>
-    <ProracunataVrednost>69.2</ProracunataVrednost>
-    <VremePoslednjegUnosa>14:12</VremePoslednjegUnosa>
-    <VremeProracuna>05-19-2018  20:21</VremeProracuna>
+    <ProracunataVrednost>114.5</ProracunataVrednost>
+    <VremePoslednjegUnosa>17:3</VremePoslednjegUnosa>
+    <VremeProracuna>05/20/2018  13:06</VremeProracuna>
     <sifraPodrucja>SRB</sifraPodrucja>
   </PodatakZaProracu>
   <PodatakZaProracu>
-    <ProracunataVrednost>63</ProracunataVrednost>
-    <VremePoslednjegUnosa>6:8</VremePoslednjegUnosa>
-    <VremeProracuna>05-19-2018  20:23</VremeProracuna>
-    <sifraPodrucja>ALB</sifraPodrucja>
+    <ProracunataVrednost>143</ProracunataVrednost>
+    <VremePoslednjegUnosa>15:3</VremePoslednjegUnosa>
+    <VremeProracuna>05/20/2018  14:57</VremeProracuna>
+    <sifraPodrucja>SRB</sifraPodrucja>
   </PodatakZaProracu>
   <PodatakZaProracu>
-    <ProracunataVrednost>NaN</ProracunataVrednost>
-    <VremePoslednjegUnosa>6:8</VremePoslednjegUnosa>
-    <VremeProracuna>05-19-2018  20:23</VremeProracuna>
-    <sifraPodrucja>BIH</sifraPodrucja>
-  </PodatakZaProracu>
-  <PodatakZaProracu>
-    <ProracunataVrednost>NaN</ProracunataVrednost>
-    <VremePoslednjegUnosa>6:8</VremePoslednjegUnosa>
-    <VremeProracuna>05-19-2018  20:23</VremeProracuna>
-    <sifraPodrucja>BGR</sifraPodrucja>
-  </PodatakZaProracu>
-  <PodatakZaProracu>
-    <ProracunataVrednost>NaN</ProracunataVrednost>
-    <VremePoslednjegUnosa>10:48</VremePoslednjegUnosa>
-    <VremeProracuna>05-19-2018  20:23</VremeProracuna>
-    <sifraPodrucja>MNE</sifraPodrucja>
-  </PodatakZaProracu>
-  <PodatakZaProracu>
-    <ProracunataVrednost>NaN</ProracunataVrednost>
-    <VremePoslednjegUnosa>6:8</VremePoslednjegUnosa>
-    <VremeProracuna>05-19-2018  20:23</VremeProracuna>
-    <sifraPodrucja>GRC</sifraPodrucja>
-  </PodatakZaProracu>
-  <PodatakZaProracu>
-    <ProracunataVrednost>NaN</ProracunataVrednost>
-    <VremePoslednjegUnosa>6:8</VremePoslednjegUnosa>
-    <VremeProracuna>05-19-2018  20:23</VremeProracuna>
-    <sifraPodrucja>HR</sifraPodrucja>
-  </PodatakZaProracu>
-  <PodatakZaProracu>
-    <ProracunataVrednost>NaN</ProracunataVrednost>
-    <VremePoslednjegUnosa>6:8</VremePoslednjegUnosa>
-    <VremeProracuna>05-19-2018  20:23</VremeProracuna>
-    <sifraPodrucja>MKD</sifraPodrucja>
-  </PodatakZaProracu>
-  <PodatakZaProracu>
-    <ProracunataVrednost>NaN</ProracunataVrednost>
-    <VremePoslednjegUnosa>6:8</VremePoslednjegUnosa>
-    <VremeProracuna>05-19-2018  20:23</VremeProracuna>
-    <sifraPodrucja>ROU</sifraPodrucja>
-  </PodatakZaProracu>
-  <PodatakZaProracu>
-    <ProracunataVrednost>NaN</ProracunataVrednost>
-    <VremePoslednjegUnosa>6:8</VremePoslednjegUnosa>
-    <VremeProracuna>05-19-2018  20:23</VremeProracuna>
-    <sifraPodrucja>SVN</sifraPodrucja>
-  </PodatakZaProracu>
-  <PodatakZaProracu>
-    <ProracunataVrednost>NaN</ProracunataVrednost>
-    <VremePoslednjegUnosa>7:10</VremePoslednjegUnosa>
-    <VremeProracuna>05-19-2018  20:23</VremeProracuna>
+    <ProracunataVrednost>110</ProracunataVrednost>
+    <VremePoslednjegUnosa>4:10</VremePoslednjegUnosa>
+    <VremeProracuna>05/20/2018  15:02</VremeProracuna>
     <sifraPodrucja>SRB</sifraPodrucja>
   </PodatakZaProracu>
 </ArrayOfPodatakZaProracu>

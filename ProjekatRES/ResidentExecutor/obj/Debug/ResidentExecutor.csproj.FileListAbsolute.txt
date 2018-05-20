@@ -7,3 +7,12 @@ C:\Users\Marija\Desktop\RES\Projekat_BW&P\ResidentExecutor\ProjekatRES\ResidentE
 C:\Users\Marija\Desktop\RES\Projekat_BW&P\ResidentExecutor\ProjekatRES\ResidentExecutor\obj\Debug\ResidentExecutor.exe
 C:\Users\Marija\Desktop\RES\Projekat_BW&P\ResidentExecutor\ProjekatRES\ResidentExecutor\obj\Debug\ResidentExecutor.pdb
 C:\Users\Marija\Desktop\RES\Projekat_BW&P\ResidentExecutor\ProjekatRES\ResidentExecutor\obj\Debug\ResidentExecutor.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\ResidentExecutor\obj\Debug\ResidentExecutor.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\ResidentExecutor\obj\Debug\ResidentExecutor.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\ResidentExecutor\obj\Debug\ResidentExecutor.exe
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\ResidentExecutor\obj\Debug\ResidentExecutor.pdb
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\ResidentExecutor\bin\Debug\ResidentExecutor.exe.config
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\ResidentExecutor\bin\Debug\ResidentExecutor.exe
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\ResidentExecutor\bin\Debug\ResidentExecutor.pdb
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\ResidentExecutor\bin\Debug\DataAccess.dll
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\ResidentExecutor\bin\Debug\DataAccess.pdb

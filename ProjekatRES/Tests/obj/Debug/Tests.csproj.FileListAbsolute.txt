@@ -1,0 +1,6 @@
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\Tests\bin\Debug\Tests.dll
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\Tests\bin\Debug\Tests.pdb
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\Tests\obj\Debug\Tests.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\Tests\obj\Debug\Tests.dll
+C:\Users\User\Desktop\Res_projekat\ResidentExecutor\ProjekatRES\Tests\obj\Debug\Tests.pdb
