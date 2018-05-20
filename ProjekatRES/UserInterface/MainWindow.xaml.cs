@@ -1,6 +1,7 @@
 ﻿using DataAccess;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,9 +23,12 @@ namespace UserInterface
     public partial class MainWindow : Window
     {
         Metode m = new Metode();
+        public static List<Podatak> lista;
+        public static List<Podrucje> podrucja; 
         public MainWindow()
         {
             InitializeComponent();
+           
             dan.ItemsSource = Liste.dani;
             mesec.ItemsSource = Liste.meseci;
             sat.ItemsSource = Liste.sati;
@@ -38,33 +42,40 @@ namespace UserInterface
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+           
+
+
             if(validate())
             {
+               
+                //int dan1 = int.Parse(dan.SelectedValue.ToString());
+                //if(dan1<10)
+                //{
+                //    datumVreme = "0" + dan.SelectedValue.ToString();
+                //}
+                //else
+                //{
+                //    datumVreme = dan.SelectedValue.ToString();
+                //}
 
-                int dan1 = int.Parse(dan.SelectedValue.ToString());
-                if(dan1<10)
-                {
-                    datumVreme = "0" + dan.SelectedValue.ToString();
-                }
-                else
-                {
-                    datumVreme = dan.SelectedValue.ToString();
-                }
+                //datumVreme = datumVreme + ".";
 
-                datumVreme = datumVreme + ".";
+                //int mesec1 = int.Parse(mesec.SelectedValue.ToString());
+                //if (mesec1 < 10)
+                //{
+                //    datumVreme = datumVreme + "0" + mesec.SelectedValue.ToString();
+                //}
+                //else
+                //{
+                //    datumVreme = datumVreme + mesec.SelectedValue.ToString();
+                //}
 
-                int mesec1 = int.Parse(mesec.SelectedValue.ToString());
-                if (mesec1 < 10)
-                {
-                    datumVreme = datumVreme + "0" + mesec.SelectedValue.ToString();
-                }
-                else
-                {
-                    datumVreme = datumVreme + mesec.SelectedValue.ToString();
-                }
+                //datumVreme = datumVreme + "." + godina.Text.ToString();
+                //datumVreme = datumVreme + " " + sat.SelectedValue.ToString() + ":" + minut.SelectedValue.ToString();
 
-                datumVreme = datumVreme + "." + godina.Text.ToString();
-                datumVreme = datumVreme + " " + sat.SelectedValue.ToString() + ":" + minut.SelectedValue.ToString();
+               
+
+
                 m.UcitajUBazu1(v, datumVreme, podrucjeBoxS.SelectedValue.ToString());
             }
            
@@ -74,8 +85,20 @@ namespace UserInterface
         private bool validate()
         {
             bool retVal = true;
+            podrucja = m.IzlistajPodrucja();
 
-            if(vrednosText.Text.Trim().Equals(""))
+            string sifra = "";
+            foreach (Podrucje pod in podrucja)
+            {
+                if (pod.Ime.Equals(podrucjeBoxS.SelectedValue.ToString()))
+                {
+                    sifra = pod.Sifra;
+                }
+            }
+
+            lista = m.IscitajIzBaze();
+
+            if (vrednosText.Text.Trim().Equals(""))
             {
                 retVal = false;
                 vrednostGreska.Content = "Polje ne sme biti prazno!";
@@ -281,6 +304,42 @@ namespace UserInterface
 
             }
 
+
+
+            int dan1 = int.Parse(dan.SelectedValue.ToString());
+            if (dan1 < 10)
+            {
+                datumVreme = "0" + dan.SelectedValue.ToString();
+            }
+            else
+            {
+                datumVreme = dan.SelectedValue.ToString();
+            }
+
+            datumVreme = datumVreme + ".";
+
+            int mesec1 = int.Parse(mesec.SelectedValue.ToString());
+            if (mesec1 < 10)
+            {
+                datumVreme = datumVreme + "0" + mesec.SelectedValue.ToString();
+            }
+            else
+            {
+                datumVreme = datumVreme + mesec.SelectedValue.ToString();
+            }
+
+            datumVreme = datumVreme + "." + godina.Text.ToString();
+            datumVreme = datumVreme + " " + sat.SelectedValue.ToString() + ":" + minut.SelectedValue.ToString();
+
+
+            foreach (Podatak q in lista)
+            {
+                if (q.datum.Equals(datumVreme) && q.sifraPod.Equals(sifra))
+                {
+                    MessageBox.Show("Vrednosti za dato vreme i datu drzavu su vec unete");
+                    retVal = false;
+                }
+            }
 
 
             return retVal;

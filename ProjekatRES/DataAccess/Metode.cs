@@ -88,6 +88,7 @@ namespace DataAccess
 
         public void UcitajUBazu(List<double> vred, Dictionary<string,string> vremena, DateTime time, int i)
         {
+            prorPod = new BindingList<PodatakZaProracu>();
             var path = Path.GetDirectoryName(System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
             path = Path.GetDirectoryName(path);
             path = Path.GetDirectoryName(path);
@@ -106,33 +107,51 @@ namespace DataAccess
                 path = path + @"\Database\MaksimalnaPotrosnja.xml";
             }
 
+
+            PodatakZaProracu t = new PodatakZaProracu();
+            t.ProracunataVrednost = -1;
+            t.sifraPodrucja = "";
+            t.VremePoslednjegUnosa = "";
+            t.VremeProracuna = "";
+
             if (File.Exists(path))
             {
                 prorPod = serializer.DeSerializeObject<BindingList<PodatakZaProracu>>(path);
+
+            }
+            else
+            {
+                
+                prorPod.Add(t);
+                serializer.SerializeObject<BindingList<PodatakZaProracu>>(prorPod, path);
+                //serializer.SerializeObject<BindingList<PodatakZaProracu>>(prorPod,path);
+                //File.Create(path);
             }
             List<string> sifre = new List<string>();
             List<string> vr = new List<string>();
-            foreach(string ss in vremena.Keys)
+            foreach (string ss in vremena.Keys)
             {
                 sifre.Add(ss);
                 vr.Add(vremena[ss]);
             }
 
-            for(int j = 0; j < vred.Count; j++)
+            for (int j = 0; j < vred.Count; j++)
             {
                 PodatakZaProracu pzp = new PodatakZaProracu();
                 pzp.ProracunataVrednost = vred[j];
-                pzp.sifraPodrucja =sifre[j];
+                pzp.sifraPodrucja = sifre[j];
                 pzp.VremePoslednjegUnosa = vr[j];
 
                 string dt = String.Format("{0:MM/dd/yyyy}", time);
                 string dt1 = String.Format("{0: HH}", time);
-                string dt2 = String.Format("{0: mm}" , time);
+                string dt2 = String.Format("{0: mm}", time);
 
                 pzp.VremeProracuna = dt + " " + dt1 + ":" + dt2.Trim();
 
                 prorPod.Add(pzp);
             }
+
+            prorPod.Remove(t);
             serializer.SerializeObject<BindingList<PodatakZaProracu>>(prorPod, path);
 
 
@@ -148,14 +167,35 @@ namespace DataAccess
 
             return podrucja.ToList();
         }
-        public Dictionary<string,string> IzlistajPoslednjeProsecne()
+        public Dictionary<string,string> IzlistajPoslednje(int brojFunkcije)
         {
             var path = Path.GetDirectoryName(System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
             path = Path.GetDirectoryName(path);
             path = Path.GetDirectoryName(path);
-            string path1 = path + @"\Database\ProsecnaPotrosnja.xml";
+            string path1 ="";
+            if (brojFunkcije == 1)
+            {
+                 path1 = path + @"\Database\ProsecnaPotrosnja.xml";
+            }
+            else if(brojFunkcije == 2)
+            {
+                 path1 = path + @"\Database\MinimalnaPotrosnja.xml";
+            }
+            else
+            {
+                 path1 = path + @"\Database\MaksimalnaPotrosnja.xml";
+            }
             BindingList<PodatakZaProracu> b = new BindingList<PodatakZaProracu>();
-            b = serializer.DeSerializeObject<BindingList<PodatakZaProracu>>(path1);
+
+            if (File.Exists(path1))
+            {
+               b = serializer.DeSerializeObject<BindingList<PodatakZaProracu>>(path1);
+            }
+            //else
+            //{
+            //    File.Create(path1);
+            //}
+            //b = serializer.DeSerializeObject<BindingList<PodatakZaProracu>>(path1);
 
             List<PodatakZaProracu> k = new List<PodatakZaProracu>();
             Dictionary<string, string> dic = new Dictionary<string, string>();
@@ -201,9 +241,6 @@ namespace DataAccess
                             }
                     }
 
-
-
-                    
                 }
                 dic.Add(listaVremena.Last().Key,listaVremena.Last().Value);
             }

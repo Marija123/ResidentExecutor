@@ -65,4 +65,39 @@
     <datum>20.05.2018 4:10</datum>
     <sifraPod>SRB</sifraPod>
   </Podatak>
+  <Podatak>
+    <vrednost>168</vrednost>
+    <datum>20.05.2018 18:19</datum>
+    <sifraPod>BGR</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>780</vrednost>
+    <datum>20.05.2018 20:21</datum>
+    <sifraPod>GRC</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>60</vrednost>
+    <datum>20.05.2018 21:6</datum>
+    <sifraPod>SRB</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>60</vrednost>
+    <datum>20.05.2018 1:18</datum>
+    <sifraPod>SRB</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>80</vrednost>
+    <datum>20.05.2018 10:18</datum>
+    <sifraPod>ALB</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>45</vrednost>
+    <datum>20.05.2018 21:6</datum>
+    <sifraPod>SRB</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>45678</vrednost>
+    <datum>20.05.2018 22:6</datum>
+    <sifraPod>SRB</sifraPod>
+  </Podatak>
 </ArrayOfPodatak>

@@ -22,7 +22,7 @@ namespace ResidentExecutor
             List<Podatak> listaPodataka = m.IscitajIzBaze();
             List<double> listaSuma = new List<double>();
             Dictionary<string, string> listaPoslednjihVremena = new Dictionary<string, string>();
-            Dictionary<string, string> dic = m.IzlistajPoslednjeProsecne();
+            Dictionary<string, string> dic = m.IzlistajPoslednje(1);
 
             int[] count = new int[10];
             List<double> listaRez = new List<double>();
@@ -32,6 +32,7 @@ namespace ResidentExecutor
                 for (int i = 0; i < lista.Count; i++)
                 {
                     count[i] = 0;
+                    listaSuma.Add(0);
                     List<string> s = new List<string>();
                     foreach (Podatak pod in listaPodataka)
                     {
