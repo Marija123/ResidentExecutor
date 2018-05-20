@@ -100,4 +100,39 @@
     <datum>20.05.2018 22:6</datum>
     <sifraPod>SRB</sifraPod>
   </Podatak>
+  <Podatak>
+    <vrednost>10</vrednost>
+    <datum>20.05.2018 15:4</datum>
+    <sifraPod>ALB</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>29</vrednost>
+    <datum>20.05.2018 15:4</datum>
+    <sifraPod>MKD</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>400</vrednost>
+    <datum>20.05.2018 5:5</datum>
+    <sifraPod>SVN</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>40</vrednost>
+    <datum>20.05.2018 10:5</datum>
+    <sifraPod>SRB</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>3678</vrednost>
+    <datum>20.05.2018 7:7</datum>
+    <sifraPod>BGR</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>5</vrednost>
+    <datum>20.05.2018 2:3</datum>
+    <sifraPod>HR</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>30000</vrednost>
+    <datum>20.05.2018 2:3</datum>
+    <sifraPod>BIH</sifraPod>
+  </Podatak>
 </ArrayOfPodatak>

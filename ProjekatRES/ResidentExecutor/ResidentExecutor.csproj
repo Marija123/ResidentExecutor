@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MaksimalnaPotrosnja.cs" />
+    <Compile Include="MinimalnaPotrosnja.cs" />
     <Compile Include="ProsecnaPotrosnja.cs" />
     <Compile Include="IFunkcije.cs" />
     <Compile Include="Program.cs" />
