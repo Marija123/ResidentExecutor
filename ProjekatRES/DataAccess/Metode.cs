@@ -54,23 +54,11 @@ namespace DataAccess
 
         public List<Podatak> IscitajIzBaze()
         {
-            DateTime dt = DateTime.Now;
-            string datumVreme = String.Format("{0:MM/dd/yyyy}", dt);
-            //string datumVreme = DateTime.Now.ToString();
-            //string[] pom = datumVreme.Split(' ');
-            // string[] pom1 = pom[0].Split('/');
-
-
-            string[] pom1;
-            if(datumVreme.Contains('-'))
-            {
-                pom1 = datumVreme.Split('-');
-            }
-            else
-            {
-               pom1 = datumVreme.Split('/');
-            }
-            string trazeniXML = pom1[1] + pom1[0] + pom1[2];
+            
+            string datum = DateTime.Now.ToString();
+            string[] pom = datum.Split(' ');
+            string[] pom1 = pom[0].Split('-');
+            string trazeniXML = pom1[2] +   pom1[1] +   pom1[0];
 
             //string trazeniXML = "19052018";
 
@@ -80,9 +68,17 @@ namespace DataAccess
 
             path = path + @"\Database\" + trazeniXML + ".xml";
             
-            podaci = serializer.DeSerializeObject<BindingList<Podatak>>(path);
-
-            return podaci.ToList();
+            
+            if(File.Exists(path))
+            {
+                podaci = serializer.DeSerializeObject<BindingList<Podatak>>(path);
+                return podaci.ToList();
+            }
+            else
+            {
+                return new List<Podatak>();
+            }
+            
 
         }
 
@@ -142,11 +138,12 @@ namespace DataAccess
                 pzp.sifraPodrucja = sifre[j];
                 pzp.VremePoslednjegUnosa = vr[j];
 
-                string dt = String.Format("{0:MM/dd/yyyy}", time);
-                string dt1 = String.Format("{0: HH}", time);
-                string dt2 = String.Format("{0: mm}", time);
+                string dt = time.ToString();
+                string[] dt1 = dt.Split(' ');
+                string[] dt2 = dt1[0].Split('-');
+                string[] dt3 = dt1[1].Split(':');
 
-                pzp.VremeProracuna = dt + " " + dt1 + ":" + dt2.Trim();
+                pzp.VremeProracuna = dt2[2] +"." + dt2[1] + "." + dt2[0] + ". " + dt3[0] + ":" + dt3[1]; 
 
                 prorPod.Add(pzp);
             }
@@ -208,41 +205,50 @@ namespace DataAccess
             }
 
             DateTime dt = DateTime.Now;
-            string datumVreme = String.Format("{0:MM/dd/yyyy}", dt);
-            //string[] pom1;
-            //if (datumVreme.Contains('-'))
-            //{
-            //    pom1 = datumVreme.Split('-');
-            //}
-            //else
-            //{
-            //    pom1 = datumVreme.Split('/');
-            //}
-            //string trazeniDatum = pom1[0]  + "-" + pom1[1] + "-" + pom1[2];
-            Dictionary<string,string> listaVremena = new Dictionary<string, string>();
+            string dt0 = dt.ToString();
+            string[] dt1 = dt0.Split(' ');
+            string[] dt2 = dt1[0].Split('-');
+            
+
+            string datumVreme = dt2[2] + "." + dt2[1] + "." + dt2[0] + ".";
+
+
+            Dictionary<string, string> listaVremena ;
 
             for (int i = 0; i < podrucja.Count; i++)
             {
+                listaVremena = new Dictionary<string, string>();
 
                 foreach (PodatakZaProracu p in b)
                 {
-                    if ((p.VremeProracuna.Substring(0,10)).Equals(datumVreme))
+                    string[] pomocniDatum = p.VremeProracuna.Split(' ');
+                    if (pomocniDatum[0].Equals(datumVreme))
                     {
                             if (p.sifraPodrucja.Equals(podrucja[i].Sifra))
                             {
-                            if (listaVremena.ContainsKey(p.sifraPodrucja))
-                            {
-                                listaVremena[p.sifraPodrucja] = p.VremePoslednjegUnosa;
-                            }
-                            else
-                            {
-                                listaVremena.Add(p.sifraPodrucja, p.VremePoslednjegUnosa);
-                            }
+                                if (listaVremena.ContainsKey(p.sifraPodrucja))
+                                {
+                                    listaVremena[p.sifraPodrucja] = p.VremePoslednjegUnosa;
+                                }
+                                else
+                                {
+                                    listaVremena.Add(p.sifraPodrucja, p.VremePoslednjegUnosa);
+                                }
                             }
                     }
 
                 }
-                dic.Add(listaVremena.Last().Key,listaVremena.Last().Value);
+
+                if(listaVremena.Any())
+                {
+                    dic.Add(listaVremena.Last().Key, listaVremena.Last().Value);
+                }
+                else
+                {
+                    dic.Add(podrucja[i].Sifra, "-1");
+                   
+                }
+                
             }
             return dic;
 

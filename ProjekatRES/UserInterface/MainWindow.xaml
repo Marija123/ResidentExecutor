@@ -8,22 +8,22 @@
         Title="MainWindow" Height="351.559" Width="525">
     <Grid Background="#900c3f">
         <Label x:Name ="podrucjeGreska" Content="" Foreground="Red" FontSize="10" Margin="199,240,10.667,36"/>
-        <Label x:Name ="vremeGreska" Content="" Foreground="Red" FontSize="10" Margin="199,173,10.667,103"/>
-        <Label x:Name ="datumGreska" Content="" Foreground="Red" FontSize="10" Margin="199,113,10.667,164"/>
-        <TextBox x:Name="godina" Margin="317,82,80.4,208.6"/>
+        <Label x:Name ="vremeGreska" Content="" Foreground="Red" FontSize="10" Margin="183,92,26.4,183.6"/>
+        <Label x:Name ="danasnjiDatum" Content="" Foreground="Orange" FontSize="20" Margin="167,10,42.4,266.6"/>
+        <!--TextBox x:Name="godina" Margin="317,82,80.4,208.6"/-->
         <Button x:Name="dugmeUnesi" Content="Unesi" Margin="199,274,171.667,9" Click="Button_Click" Background="Orange" Foreground="#900c3f" FontSize="20"/>
-        <Label Content="Unesite vrednost:" Margin="10,22,340.4,253.6" Foreground="Orange" FontSize="20"/>
-        <Label Content="Unesite datum:" Margin="10,73,348.4,199.6" Foreground="Orange" FontSize="20" RenderTransformOrigin="0.526,0.496"/>
-        <Label Content="Unesite vreme:" Margin="10,142,364.667,118" Foreground="Orange" FontSize="20"/>
-        <Label Content="mW/h" Foreground="Orange" FontSize="18" Margin="438,14,10.4,268.6"/>
-        <Label Content=":" Foreground="Orange" FontSize="20" Margin="252,142,252.4,142.6" RenderTransformOrigin="-6.932,2.375"/>
+        <Label Content="Unesite vrednost:" Margin="10,136,340.4,139.6" Foreground="Orange" FontSize="20"/>
+        <!--Label Content="Datum:" Margin="25,73,375.4,203.6" Foreground="Orange" FontSize="20" RenderTransformOrigin="0.526,0.496"/-->
+        <Label Content="Unesite vreme:" Margin="10,55,364.4,204.6" Foreground="Orange" FontSize="20"/>
+        <Label Content="mW/h" Foreground="Orange" FontSize="18" Margin="448,140,0.4,142.6"/>
+        <Label Content=":" Foreground="Orange" FontSize="20" Margin="262,55,242.4,229.6" RenderTransformOrigin="-6.932,2.375"/>
         <Label Content="Odaberite područje:" Foreground="Orange" FontSize="20" Margin="10,209,319.667,53"/>
-        <Label x:Name ="vrednostGreska" Content="" Foreground="Red" FontSize="10" Margin="199,53,10.667,225"/>
-        <TextBox x:Name="vrednosText" Margin="199,22,80.4,268.6"/>
-        <ComboBox x:Name="dan" Margin="199,82,266.4,208.6"/>
-        <ComboBox x:Name="mesec" Margin="259,82,206.4,208.6" RenderTransformOrigin="0.2,2.185"/>
-        <ComboBox x:Name="sat" Margin="199,142,266.667,149"/>
-        <ComboBox x:Name="minut" Margin="271,141,194.667,149"/>
+        <Label x:Name ="vrednostGreska" Content="" Foreground="Red" FontSize="10" Margin="183,179,26.4,98.6"/>
+        <TextBox x:Name="vrednosText" Margin="199,143,80.4,147.6"/>
+        <!--ComboBox x:Name="dan" Margin="199,82,266.4,208.6"/-->
+        <!--ComboBox x:Name="mesec" Margin="259,82,206.4,208.6" RenderTransformOrigin="0.2,2.185"/-->
+        <ComboBox x:Name="sat" Margin="199,61,267.4,229.6"/>
+        <ComboBox x:Name="minut" Margin="281,60,184.4,229.6"/>
         <ComboBox x:Name="podrucjeBoxS"  Margin="199,209,80.4,81.6"/>
     </Grid>
 </Window>

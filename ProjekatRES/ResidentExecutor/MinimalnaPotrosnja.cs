@@ -23,6 +23,11 @@ namespace ResidentExecutor
 
             List<double> listaRez = new List<double>();
 
+            if(!listaPodataka.Any())
+            {
+                return;
+            }
+
             if (!dic.Any())
             {
                 for (int i = 0; i < lista.Count; i++)
@@ -42,8 +47,12 @@ namespace ResidentExecutor
                             listaVrednosti.Add(pod.vrednost);
                         }
                     }
-                    listaRez.Add(listaVrednosti.Min());
-                    listaPoslednjihVremena.Add(lista[i].Sifra, s.Last());
+                    if(s.Any())
+                    {
+                        listaRez.Add(listaVrednosti.Min());
+                        listaPoslednjihVremena.Add(lista[i].Sifra, s.Last());
+                    }
+                   
 
                 }
 
@@ -65,8 +74,10 @@ namespace ResidentExecutor
                             
                         }
                     }
-
-                    listaPoslednjihVremena.Add(lista[i].Sifra, s.Last());
+                    if (s.Any())
+                    {
+                        listaPoslednjihVremena.Add(lista[i].Sifra, s.Last());
+                    }
 
                 }
 

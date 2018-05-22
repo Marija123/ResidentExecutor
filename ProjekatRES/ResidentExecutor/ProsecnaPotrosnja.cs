@@ -27,12 +27,19 @@ namespace ResidentExecutor
             int[] count = new int[10];
             List<double> listaRez = new List<double>();
 
+            if(!listaPodataka.Any())
+            {
+                return;
+            }
+            int brojac = -1;
             if (!dic.Any())
             {
                 for (int i = 0; i < lista.Count; i++)
                 {
-                    count[i] = 0;
+                   
                     listaSuma.Add(0);
+                    brojac++;
+                    count[brojac] = 0;
                     List<string> s = new List<string>();
                     foreach (Podatak pod in listaPodataka)
                     {
@@ -41,14 +48,22 @@ namespace ResidentExecutor
                         {
                             string[] pom = pod.datum.Split(' ');
                             s.Add(pom[1]);
-                            count[i]++;
-                            double a = listaSuma.ElementAt(i) + pod.vrednost;
-                            listaSuma[i] = a;
+                            count[brojac]++;
+                            double a = listaSuma.ElementAt(brojac) + pod.vrednost;
+                            listaSuma[brojac] = a;
                             //listaSuma.Insert(i, a);
                         }
                     }
-
-                    listaPoslednjihVremena.Add(lista[i].Sifra, s.Last());
+                    if(s.Any())
+                    {
+                        listaPoslednjihVremena.Add(lista[i].Sifra, s.Last());
+                    }
+                    else
+                    {
+                        listaSuma.RemoveAt(listaSuma.LastIndexOf(0));
+                        brojac--;
+                    }
+                    
 
                 }
 
@@ -79,8 +94,15 @@ namespace ResidentExecutor
                             //listaSuma[i] += pod.vrednost;
                         }
                     }
-
-                    listaPoslednjihVremena.Add(lista[i].Sifra, s.Last());
+                    if(s.Any())
+                    {
+                        listaPoslednjihVremena.Add(lista[i].Sifra, s.Last());
+                    }
+                    
+                    //foreach(string kljuc in listaPoslednjihVremena.Keys)
+                    //{
+                    //    Console.WriteLine(kljuc + " " + listaPoslednjihVremena[kljuc]);
+                    //}
 
                 }
                 List<string> listaDrz = new List<string>();

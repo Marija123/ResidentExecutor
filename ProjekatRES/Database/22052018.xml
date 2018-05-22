@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<ArrayOfPodatak xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Podatak>
+    <vrednost>20</vrednost>
+    <datum>22.05.2018. 5:4</datum>
+    <sifraPod>GRC</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>25</vrednost>
+    <datum>22.05.2018. 10:3</datum>
+    <sifraPod>ALB</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>45</vrednost>
+    <datum>22.05.2018. 16:7</datum>
+    <sifraPod>ALB</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>45</vrednost>
+    <datum>22.05.2018. 16:7</datum>
+    <sifraPod>MNE</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>25</vrednost>
+    <datum>22.05.2018. 13:7</datum>
+    <sifraPod>BIH</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>25</vrednost>
+    <datum>22.05.2018. 22:7</datum>
+    <sifraPod>MNE</sifraPod>
+  </Podatak>
+  <Podatak>
+    <vrednost>25</vrednost>
+    <datum>22.05.2018. 22:7</datum>
+    <sifraPod>MKD</sifraPod>
+  </Podatak>
+</ArrayOfPodatak>

@@ -90,4 +90,40 @@
     <VremeProracuna>05/20/2018  17:42</VremeProracuna>
     <sifraPodrucja>HR</sifraPodrucja>
   </PodatakZaProracu>
+  <PodatakZaProracu>
+    <ProracunataVrednost>20</ProracunataVrednost>
+    <VremePoslednjegUnosa>5:4</VremePoslednjegUnosa>
+    <VremeProracuna>22.05.2018. 12:26</VremeProracuna>
+    <sifraPodrucja>GRC</sifraPodrucja>
+  </PodatakZaProracu>
+  <PodatakZaProracu>
+    <ProracunataVrednost>45</ProracunataVrednost>
+    <VremePoslednjegUnosa>16:7</VremePoslednjegUnosa>
+    <VremeProracuna>22.05.2018. 13:29</VremeProracuna>
+    <sifraPodrucja>ALB</sifraPodrucja>
+  </PodatakZaProracu>
+  <PodatakZaProracu>
+    <ProracunataVrednost>45</ProracunataVrednost>
+    <VremePoslednjegUnosa>16:7</VremePoslednjegUnosa>
+    <VremeProracuna>22.05.2018. 13:29</VremeProracuna>
+    <sifraPodrucja>MNE</sifraPodrucja>
+  </PodatakZaProracu>
+  <PodatakZaProracu>
+    <ProracunataVrednost>25</ProracunataVrednost>
+    <VremePoslednjegUnosa>13:7</VremePoslednjegUnosa>
+    <VremeProracuna>22.05.2018. 13:30</VremeProracuna>
+    <sifraPodrucja>BIH</sifraPodrucja>
+  </PodatakZaProracu>
+  <PodatakZaProracu>
+    <ProracunataVrednost>45</ProracunataVrednost>
+    <VremePoslednjegUnosa>22:7</VremePoslednjegUnosa>
+    <VremeProracuna>22.05.2018. 13:31</VremeProracuna>
+    <sifraPodrucja>MNE</sifraPodrucja>
+  </PodatakZaProracu>
+  <PodatakZaProracu>
+    <ProracunataVrednost>25</ProracunataVrednost>
+    <VremePoslednjegUnosa>22:7</VremePoslednjegUnosa>
+    <VremeProracuna>22.05.2018. 13:31</VremeProracuna>
+    <sifraPodrucja>MKD</sifraPodrucja>
+  </PodatakZaProracu>
 </ArrayOfPodatakZaProracu>

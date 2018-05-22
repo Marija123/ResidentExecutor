@@ -28,55 +28,26 @@ namespace UserInterface
         public MainWindow()
         {
             InitializeComponent();
-           
-            dan.ItemsSource = Liste.dani;
-            mesec.ItemsSource = Liste.meseci;
+
+            string datum = DateTime.Now.ToString();
+            string[] pom = datum.Split(' ');
+            string[] pom1 = pom[0].Split('-');
+            danasnjiDatum.Content = pom1[2] + "." + pom1[1] + "." + pom1[0] + ".";
             sat.ItemsSource = Liste.sati;
             minut.ItemsSource = Liste.minuti;
             podrucjeBoxS.ItemsSource = Liste.podrucja;
         }
 
         public static double v = 0;
-        public static string datumVreme = "";
+        public static string vreme = "";
        
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           
-
-
             if(validate())
             {
-               
-                //int dan1 = int.Parse(dan.SelectedValue.ToString());
-                //if(dan1<10)
-                //{
-                //    datumVreme = "0" + dan.SelectedValue.ToString();
-                //}
-                //else
-                //{
-                //    datumVreme = dan.SelectedValue.ToString();
-                //}
 
-                //datumVreme = datumVreme + ".";
-
-                //int mesec1 = int.Parse(mesec.SelectedValue.ToString());
-                //if (mesec1 < 10)
-                //{
-                //    datumVreme = datumVreme + "0" + mesec.SelectedValue.ToString();
-                //}
-                //else
-                //{
-                //    datumVreme = datumVreme + mesec.SelectedValue.ToString();
-                //}
-
-                //datumVreme = datumVreme + "." + godina.Text.ToString();
-                //datumVreme = datumVreme + " " + sat.SelectedValue.ToString() + ":" + minut.SelectedValue.ToString();
-
-               
-
-
-                m.UcitajUBazu1(v, datumVreme, podrucjeBoxS.SelectedValue.ToString());
+                m.UcitajUBazu1(v, vreme, podrucjeBoxS.SelectedValue.ToString());
             }
            
             
@@ -84,18 +55,35 @@ namespace UserInterface
 
         private bool validate()
         {
+            string sifra = "";
             bool retVal = true;
             podrucja = m.IzlistajPodrucja();
 
-            string sifra = "";
-            foreach (Podrucje pod in podrucja)
+
+            if (podrucjeBoxS.SelectedItem == null)
             {
-                if (pod.Ime.Equals(podrucjeBoxS.SelectedValue.ToString()))
+                retVal = false;
+                podrucjeGreska.Content = "Morate da odaberete podrucje!";
+                // podrucjeBoxS.BorderThickness = new Thickness(3);
+                // podrucjeBoxS.BorderBrush = Brushes.Red;
+
+            }
+            else
+            {
+
+                podrucjeGreska.Content = "";
+                // podrucjeBoxS.BorderBrush = Brushes.Gray;
+
+
+                
+                foreach (Podrucje pod in podrucja)
                 {
-                    sifra = pod.Sifra;
+                    if (pod.Ime.Equals(podrucjeBoxS.SelectedValue.ToString()))
+                    {
+                        sifra = pod.Sifra;
+                    }
                 }
             }
-
             lista = m.IscitajIzBaze();
 
             if (vrednosText.Text.Trim().Equals(""))
@@ -127,118 +115,7 @@ namespace UserInterface
                // vrednosText.BorderBrush = Brushes.Red;
             }
 
-            if(podrucjeBoxS.SelectedItem == null)
-            {
-                retVal = false;
-                podrucjeGreska.Content = "Morate da odaberete podrucje!";
-               // podrucjeBoxS.BorderThickness = new Thickness(3);
-               // podrucjeBoxS.BorderBrush = Brushes.Red;
-               
-            }
-            else
-            {
-                
-                podrucjeGreska.Content = "";
-               // podrucjeBoxS.BorderBrush = Brushes.Gray;
-            }
 
-            if (dan.SelectedItem == null || mesec.SelectedItem == null || godina.Text.Trim().Equals(""))
-            {
-
-                retVal = false;
-                datumGreska.Content = "Polja ne smeju biti prazna!";
-               // dan.BorderBrush = Brushes.Red;
-               // dan.BorderThickness = new Thickness(3);
-               // mesec.BorderBrush = Brushes.Red;
-               //mesec.BorderThickness = new Thickness(3);
-               // godina.BorderBrush = Brushes.Red;
-
-            }
-            else
-            {
-                int br;
-                if(Int32.TryParse(godina.Text, out br))
-                {
-                    if (br < 1900 || br>2018)
-                    {
-                        retVal = false;
-                        datumGreska.Content = "Godina mora da bude izmedju 1900 i 2018!";
-                       // godina.BorderBrush = Brushes.Red;
-                    }
-                    else
-                    {
-
-                        if (mesec.SelectedValue.Equals(4) || mesec.SelectedValue.Equals(6) || mesec.SelectedValue.Equals(9) || mesec.SelectedValue.Equals(11))
-                        {
-                            if (dan.SelectedValue.Equals(31))
-                            {
-                                retVal = false;
-                                datumGreska.Content = "Selektovani mesec nema 31 dan!";
-                                //dan.BorderThickness = new Thickness(3);
-                                //dan.BorderBrush = Brushes.Red;
-                            }
-                            else
-                            {
-                                datumGreska.Content = "";
-                                //dan.BorderBrush = Brushes.Gray;
-
-                                //mesec.BorderBrush = Brushes.Gray;
-
-                                //godina.BorderBrush = Brushes.Gray;
-                            }
-                        }
-                        else if(mesec.SelectedValue.Equals(2))
-                        {
-                            if((br % 4 == 0) && ((br%100 != 0) || (br % 400 == 0)))
-                            {
-                                if(dan.SelectedValue.Equals(30) || dan.SelectedValue.Equals(31))
-                                {
-                                    retVal = false;
-                                    datumGreska.Content = "Selektovani mesec ima samo 29 dana!";
-                                    //dan.BorderThickness = new Thickness(3);
-                                    //dan.BorderBrush = Brushes.Red;
-                                }
-                                else
-                                {
-                                    datumGreska.Content = "";
-                                    //dan.BorderBrush = Brushes.Gray;
-
-                                    //mesec.BorderBrush = Brushes.Gray;
-
-                                    //godina.BorderBrush = Brushes.Gray;
-                                }
-                            }
-                            else
-                            {
-                                if (dan.SelectedValue.Equals(29) ||dan.SelectedValue.Equals(30) || dan.SelectedValue.Equals(31) )
-                                {
-                                    retVal = false;
-                                    datumGreska.Content = "Selektovani mesec ima samo 28 dana!";
-                                    //dan.BorderThickness = new Thickness(3);
-                                    //dan.BorderBrush = Brushes.Red;
-                                }
-                                else
-                                {
-                                    datumGreska.Content = "";
-                                    //dan.BorderBrush = Brushes.Gray;
-
-                                    //mesec.BorderBrush = Brushes.Gray;
-
-                                    //godina.BorderBrush = Brushes.Gray;
-                                }
-                            }
-                            
-                        }
-                    }
-                
-                }
-                else
-                {
-                    retVal = false;
-                    datumGreska.Content = "Godina mora biti broj!";
-                   // godina.BorderBrush = Brushes.Red;
-                }
-            }
 
             if(sat.SelectedItem == null || minut.SelectedItem == null)
             {
@@ -248,13 +125,14 @@ namespace UserInterface
                // sat.BorderThickness = new Thickness(3);
                //minut.BorderBrush = Brushes.Red;
                //minut.BorderThickness = new Thickness(3);
+
                
             }
             else
             {
                 if (sat.SelectedValue.Equals(25))
                 {
-                    if(!mesec.SelectedValue.Equals(3) || !dan.SelectedValue.Equals(26))
+                    if(!danasnjiDatum.Equals("31.03.2019.") || !danasnjiDatum.Equals("29.03.2020."))
                     {
                         retVal = false;
                         vremeGreska.Content = "Vreme za navedeni datum ne postoji!";
@@ -263,7 +141,7 @@ namespace UserInterface
                         //minut.BorderBrush = Brushes.Red;
                         //minut.BorderThickness = new Thickness(3);
                     }
-                    else if(mesec.SelectedValue.Equals(10) && dan.SelectedValue.Equals(29))
+                    else if(danasnjiDatum.Equals("28.10.2018.") || danasnjiDatum.Equals("27.10.2019.") || danasnjiDatum.Equals("25.10.2020."))
                     {
                         retVal = false;
                         vremeGreska.Content = "Vreme za navedeni datum ne postoji!";
@@ -273,12 +151,13 @@ namespace UserInterface
                         vremeGreska.Content = "";
                         //sat.BorderBrush = Brushes.Gray; 
                         //minut.BorderBrush = Brushes.Gray;
-                       
+                        vreme = danasnjiDatum.Content + " " + sat.SelectedValue.ToString() + ":" + minut.SelectedValue.ToString();
+
                     }
                 }
                 else if (sat.SelectedValue.Equals(24))
                 {
-                    if (mesec.SelectedValue.Equals(10) && dan.SelectedValue.Equals(29))
+                    if (danasnjiDatum.Equals("28.10.2018.") || danasnjiDatum.Equals("27.10.2019.") || danasnjiDatum.Equals("25.10.2020."))
                     {
                         retVal = false;
                         vremeGreska.Content = "Vreme za navedeni datum ne postoji!";
@@ -292,53 +171,45 @@ namespace UserInterface
                         vremeGreska.Content = "";
                         //sat.BorderBrush = Brushes.Gray;
                         //minut.BorderBrush = Brushes.Gray;
-
+                        vreme = danasnjiDatum.Content + " " + sat.SelectedValue.ToString() + ":" + minut.SelectedValue.ToString();
                     }
                 }
                 else
                 {
                     vremeGreska.Content = "";
+                    vreme = danasnjiDatum.Content + " " + sat.SelectedValue.ToString() + ":" + minut.SelectedValue.ToString();
                 }
 
 
 
             }
-
-
-
-            int dan1 = int.Parse(dan.SelectedValue.ToString());
-            if (dan1 < 10)
-            {
-                datumVreme = "0" + dan.SelectedValue.ToString();
-            }
-            else
-            {
-                datumVreme = dan.SelectedValue.ToString();
-            }
-
-            datumVreme = datumVreme + ".";
-
-            int mesec1 = int.Parse(mesec.SelectedValue.ToString());
-            if (mesec1 < 10)
-            {
-                datumVreme = datumVreme + "0" + mesec.SelectedValue.ToString();
-            }
-            else
-            {
-                datumVreme = datumVreme + mesec.SelectedValue.ToString();
-            }
-
-            datumVreme = datumVreme + "." + godina.Text.ToString();
-            datumVreme = datumVreme + " " + sat.SelectedValue.ToString() + ":" + minut.SelectedValue.ToString();
-
-
             foreach (Podatak q in lista)
             {
-                if (q.datum.Equals(datumVreme) && q.sifraPod.Equals(sifra))
+                string[] pom2 = q.datum.Split(' ');
+                string[] pom3 = pom2[1].Split(':');
+                int s = int.Parse(pom3[0]);
+                int m = int.Parse(pom3[1]);
+                if(q.sifraPod.Equals(sifra))
                 {
-                    MessageBox.Show("Vrednosti za dato vreme i datu drzavu su vec unete");
-                    retVal = false;
+                    if (q.datum.Equals(vreme))
+                    {
+                        vremeGreska.Content = "Vrednosti za dato vreme i datu drzavu su vec unete";
+
+                        retVal = false;
+                    }
+                    if (s > int.Parse(sat.SelectedValue.ToString()))
+                    {
+                        vremeGreska.Content = "Nije moguce uneti podatke za to vreme";
+                        retVal = false;
+                    }
+                    if (s == int.Parse(sat.SelectedValue.ToString()) &&  m >  int.Parse(minut.SelectedValue.ToString()))
+                    {
+                        vremeGreska.Content = "Nije moguce uneti podatke za to vreme";
+                        retVal = false;
+                    }
                 }
+                
+                
             }
 
 
